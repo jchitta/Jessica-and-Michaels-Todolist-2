@@ -1,0 +1,19 @@
+<h1>Jessica and Michael's To-Do List</h1>
+
+<div class="container">
+  <%= form_for @task, :remote => true, :format => :json do |f| %>
+    <div class="control-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, :class => 'form-control' %>
+    </div>
+    <div class="control-group">
+      <%= f.label :description %>
+      <%= f.text_field :description, :class => 'form-control' %>
+    </div><br>
+    <%= f.submit 'Add Task', :class => "btn btn-success" %>
+  <% end %>
+
+  <div class="container">
+    <div id="tasks"></div>
+  </div>
+</div>
